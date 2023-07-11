@@ -1,3 +1,5 @@
+import {cashFall} from "./cashFall.js";
+
 export class winningsScreen{
     constructor(app){
         this.app = app;
@@ -31,6 +33,9 @@ export class winningsScreen{
 
         if(this.matchingNumbers > 0){
             this.text.text = this.matchingNumbers;
+
+            const gameCashFall = new cashFall(this.app);
+            gameCashFall.makeCashFall(30);
         }else{
             this.text.text = "TRY AGAIN!";
         }

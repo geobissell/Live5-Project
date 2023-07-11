@@ -9,6 +9,6 @@ export class cash {
         this.app.stage.addChild(this.sprite);
         this.sprite.position.x = x;
 
-        gsap.fromTo(this.sprite, {y: -30, rotation: 0}, {y: 850, rotation: 4, duration: 4});
+        gsap.fromTo(this.sprite, {y: Math.floor(Math.random() * -30) + -60, rotation: 0}, {y: 850, rotation: 4, duration: Math.floor(Math.random() * 5) + 1});
     }
   }

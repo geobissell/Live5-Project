@@ -6,8 +6,10 @@ export class cashFall {
         this.notes = [];
     }
   
-    makeCashFall() {
-        this.notes.push(new cash(this.app));
-        this.notes[0].createCashSprite(100);
+    makeCashFall(amount) {
+        for(let i = 0; i < amount; i++){
+            this.notes.push(new cash(this.app));
+            this.notes[i].createCashSprite(Math.floor(Math.random() * 1240) + 40);
+        }
     }
   }
