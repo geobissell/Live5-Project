@@ -12,6 +12,7 @@ export class keypad{
 
     generateKeypad(){
         const container = new PIXI.Container();
+        container.name = "Keypad";
         this.app.stage.addChild(container);
         let xPosition = 540;
         let yPosition = 550;

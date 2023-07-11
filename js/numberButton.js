@@ -4,7 +4,8 @@ export class numberButton {
         this.number = number;
         this.inputScreen = inputScreen;
         this.sprite = null;
-        this.selectedColour = 0x000000;
+        this.selectedColour = 0x004cff;
+        this.winningColour = 0x004cff
         this.selected = false;
     }
   
@@ -22,7 +23,6 @@ export class numberButton {
     }
 
     pointerDown(){
-        
         //HARD CODED 6 - REMOVE LATER
         if(this.inputScreen.chosenNumbers.length < 6 && this.selected === false){
             this.markAsSelected();
@@ -35,7 +35,7 @@ export class numberButton {
     }
 
     markAsSelected(){
-        this.sprite.tint = this.selectedColour;
+        this.sprite.tint = this.winningColour;
         this.selected = true;
     }
 
