@@ -12,6 +12,12 @@ export class luckyDipButton {
         this.sprite.buttonMode = true;
         this.app.stage.addChild(this.sprite);
 
+        gsap.fromTo(
+            this.sprite, 
+            {x: 1380},
+            {x: 725, duration: 1}
+        );
+
         this.sprite.position.x = 725;
         this.sprite.position.y = 345;
 

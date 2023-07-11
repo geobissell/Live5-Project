@@ -12,6 +12,8 @@ export class startGameButton {
         this.sprite.buttonMode = true;
         this.app.stage.addChild(this.sprite);
 
+        gsap.fromTo(this.sprite, {y: 800}, {y: 345, duration: 1});
+
         this.sprite.position.x = 470;
         this.sprite.position.y = 345;
 

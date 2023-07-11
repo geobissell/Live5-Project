@@ -1,7 +1,8 @@
 export class outputScreen{
-    constructor(app, keypadSize){
+    constructor(app, keypadSize, winningsScreen){
         this.app = app;
         this.keypadSize = keypadSize;
+        this.winningsScreen = winningsScreen;
         this.winningNumbers = [];
         this.maxNumbers = 6;
         
@@ -15,6 +16,7 @@ export class outputScreen{
 
     generateScreen(){
         const container = new PIXI.Container();
+        container.name = "Output Screen";
         this.app.stage.addChild(container);
 
         container.addChild(this.text);

@@ -13,6 +13,8 @@ export class resetButton {
         this.sprite.buttonMode = true;
         this.app.stage.addChild(this.sprite);
 
+        gsap.fromTo(this.sprite, {x: -100}, {x: 300, duration: 1});
+
         this.sprite.position.x = 300;
         this.sprite.position.y = 345;
 

@@ -27,7 +27,5 @@ export class ball{
         container.position.y = 400;
         container.pivot.x = 25;
         container.pivot.y = 25;
-
-        gsap.fromTo(container, {rotation: 0, x: 0}, {rotation: 27, x: 600, duration: 1});
     }
 }
