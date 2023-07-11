@@ -25,7 +25,7 @@ export class outputScreen{
     }
 
     clearNumbers(){
-        this.chosenNumbers = [];
+        this.winningNumbers = [];
         this.text.text = "";
     }
 

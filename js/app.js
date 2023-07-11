@@ -39,7 +39,7 @@ gameWinningsScreen.generateScreen();
 const playerOutputScreen = new outputScreen(app, gameWinningsScreen);
 playerOutputScreen.generateScreen();
 
-const playerStartGameButton = new startGameButton(app, playerOutputScreen, playerKeypad.inputScreen);
+const playerStartGameButton = new startGameButton(app, playerOutputScreen, playerKeypad.inputScreen, gameWinningsScreen);
 playerStartGameButton.createButtonSprite();
 
 const playerResetButton = new resetButton(app, playerKeypad.inputScreen, playerOutputScreen, playerKeypad);

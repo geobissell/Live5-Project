@@ -1,8 +1,9 @@
 export class startGameButton {
-    constructor(app, outputScreen, inputScreen) {
+    constructor(app, outputScreen, inputScreen, winningScreen) {
         this.app = app;
         this.outputScreen = outputScreen;
         this.inputScreen = inputScreen;
+        this.winningScreen = winningScreen;
         this.sprite = null;
     }
   
@@ -27,6 +28,7 @@ export class startGameButton {
     pointerDown(){
         if(this.inputScreen.chosenNumbers.length >= 6){
             this.outputScreen.generateWinningNumbers();
+            this.winningScreen.displayWinnings(this.outputScreen.winningNumbers, this.inputScreen.chosenNumbers);
         }
     }
   }
