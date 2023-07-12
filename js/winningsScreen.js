@@ -24,23 +24,23 @@ export class winningsScreen{
     }
 
     displayWinnings(winningNumbers, chosenNumbers){
-        console.log(winningNumbers, chosenNumbers);
         for(let i = 0; i < winningNumbers.length; i++){
             if(chosenNumbers.includes(winningNumbers[i])){
                 this.matchingNumbers++;
             }
         }
+        
+        console.log(winningNumbers, chosenNumbers, "Matches: " + this.matchingNumbers);
 
         if(this.matchingNumbers > 0){
             this.text.text = this.matchingNumbers;
 
             const gameCashFall = new cashFall(this.app);
-            gameCashFall.makeCashFall(30);
+            gameCashFall.makeCashFall(10 * this.matchingNumbers);
         }else{
             this.text.text = "TRY AGAIN!";
         }
 
         this.matchingNumbers = 0;
-
     }
 }
