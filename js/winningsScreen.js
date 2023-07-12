@@ -38,7 +38,6 @@ export class winningsScreen{
             switch(this.matchingNumbers) {
                 case 3:
                     this.winnings += 50;
-                    
                     gameCashFall.makeCashFall(10 * this.matchingNumbers);
                 break;
                 case 4:
