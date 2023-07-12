@@ -1,3 +1,5 @@
+import {ball} from "./ball.js";
+
 export class outputScreen{
     constructor(app, keypadSize, winningsScreen){
         this.app = app;
@@ -5,6 +7,7 @@ export class outputScreen{
         this.winningsScreen = winningsScreen;
         this.winningNumbers = [];
         this.maxNumbers = 6;
+        this.winningBalls = [];
         
         this.text = new PIXI.Text("CLICK START GAME!", {
             fontFamily: "Arial",
@@ -39,5 +42,23 @@ export class outputScreen{
         }
 
         this.text.text = this.winningNumbers.toString();
+
+        this.rollOutBalls();
+    }
+
+    rollOutBalls(){
+        for(let i = 0; i < this.winningNumbers.length; i++){
+            let winningBall = new ball(this.app, this.winningNumbers[i]);
+            this.winningBalls.push(winningBall);
+            winningBall.createBall();
+            winningBall.rollTo(770 - (i * 60), i);
+        }
+    }
+
+    removeBalls(){
+        for(let i = 0; i < this.winningBalls.length; i++){
+            this.app.stage.removeChild(this.winningBalls[i].container);
+        }
+        this.winningBalls = [];
     }
 }

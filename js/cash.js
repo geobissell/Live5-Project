@@ -9,6 +9,20 @@ export class cash {
         this.app.stage.addChild(this.sprite);
         this.sprite.position.x = x;
 
-        gsap.fromTo(this.sprite, {y: Math.floor(Math.random() * -20) + -80, rotation: 0}, {y: 850, rotation: Math.floor(Math.random() * 7) + -7, duration: Math.floor(Math.random() * 4) + 2});
+        let fallPromise = new Promise((resolve, reject) => {
+                gsap.fromTo(this.sprite, {
+                    y: Math.floor(Math.random() * -20) + -80,
+                    rotation: 0
+                },
+                {
+                    y: 850, rotation: Math.floor(Math.random() * 7) + -7,
+                    duration: Math.floor(Math.random() * 4) + 2, onComplete: resolve 
+                });
+            }
+        );
+
+        fallPromise.then(() => {
+            this.app.stage.removeChild(this.sprite);
+        });
     }
-  }
+}

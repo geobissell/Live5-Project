@@ -4,6 +4,7 @@ export class ball{
         this.number = number;
         this.colour = 0x000000;
         this.sprite = null;
+        this.container;
         
         this.text = new PIXI.Text(number, {
             fontFamily: "Impact",
@@ -14,18 +15,29 @@ export class ball{
     }
 
     createBall(){
-        const container = new PIXI.Container();
-        container.name = "Ball " + this.number ;
-        this.app.stage.addChild(container);
+        this.container = new PIXI.Container();
+        this.container.name = "Ball " + this.number ;
+        this.app.stage.addChild(this.container);
         this.sprite = PIXI.Sprite.from("./images/ball.png");
-        container.addChild(this.sprite);
-        container.addChild(this.text);
+        this.container.addChild(this.sprite);
+        this.container.addChild(this.text);
         this.text.position.x = 12;
         this.text.position.y = 10;
 
-        container.position.x = 500;
-        container.position.y = 400;
-        container.pivot.x = 25;
-        container.pivot.y = 25;
+        this.container.position.x = 500;
+        this.container.position.y = 200;
+        this.container.pivot.x = 25;
+        this.container.pivot.y = 25;
+    }
+
+    rollTo(x, delay){
+        let rollPromise = new Promise((resolve, reject) => {
+            gsap.fromTo(this.container, {x: -50, rotation: 0}, {x: x, rotation: 12.55, duration: 1, delay: delay, onComplete: resolve});
+        }
+        );
+
+        rollPromise.then(() => {
+            //this.app.stage.removeChild(this.container);
+        });
     }
 }
