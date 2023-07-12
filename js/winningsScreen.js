@@ -4,8 +4,9 @@ export class winningsScreen{
     constructor(app){
         this.app = app;
         this.matchingNumbers = 0;
+        this.winnings = 0;
         
-        this.text = new PIXI.Text("WINNINGS!", {
+        this.text = new PIXI.Text("£0", {
             fontFamily: "Arial",
             fontSize: 24,
             fill: 0xff1010,
@@ -32,13 +33,28 @@ export class winningsScreen{
         
         console.log(winningNumbers, chosenNumbers, "Matches: " + this.matchingNumbers);
 
-        if(this.matchingNumbers > 0){
-            this.text.text = this.matchingNumbers;
-
+        if(this.matchingNumbers >= 3){
             const gameCashFall = new cashFall(this.app);
-            gameCashFall.makeCashFall(10 * this.matchingNumbers);
-        }else{
-            this.text.text = "TRY AGAIN!";
+            switch(this.matchingNumbers) {
+                case 3:
+                    this.winnings += 50;
+                    
+                    gameCashFall.makeCashFall(10 * this.matchingNumbers);
+                break;
+                case 4:
+                    this.winnings += 100;
+                    gameCashFall.makeCashFall(10 * this.matchingNumbers);
+                break;
+                case 5:
+                    this.winnings += 200;
+                    gameCashFall.makeCashFall(10 * this.matchingNumbers);
+                break;
+                case 6:
+                    this.winnings += 600;
+                    gameCashFall.makeCashFall(10 * this.matchingNumbers);
+                break;
+            }
+            this.text.text = "£" + this.winnings;
         }
 
         this.matchingNumbers = 0;

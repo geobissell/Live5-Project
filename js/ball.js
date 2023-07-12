@@ -9,7 +9,7 @@ export class ball{
         this.text = new PIXI.Text(number, {
             fontFamily: "Impact",
             fontSize: 24,
-            fill: 0xff1010,
+            fill: 0x000000,
             align: "center",
         });
     }
@@ -32,7 +32,7 @@ export class ball{
 
     rollTo(x, delay){
         let rollPromise = new Promise((resolve, reject) => {
-            gsap.fromTo(this.container, {x: -50, rotation: 0}, {x: x, rotation: 12.55, duration: 1, delay: delay, onComplete: resolve});
+            gsap.fromTo(this.container, {x: -50, rotation: 0}, {x: x, rotation: 12.55, duration: 0.7, delay: delay, onComplete: resolve});
         }
         );
 

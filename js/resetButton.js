@@ -27,6 +27,7 @@ export class resetButton {
 
     pointerDown(){
         this.inputScreen.clearNumbers();
+        this.outputScreen.removeBalls();
         this.outputScreen.clearNumbers();
         this.unselectAllKeys();
     }

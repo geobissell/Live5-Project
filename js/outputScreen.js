@@ -25,6 +25,9 @@ export class outputScreen{
         container.addChild(this.text);
         this.text.position.x = 440;
         this.text.position.y = 200;
+
+        //Hide numbers as may not be needed
+        this.text.alpha = 0;
     }
 
     clearNumbers(){
@@ -51,7 +54,7 @@ export class outputScreen{
             let winningBall = new ball(this.app, this.winningNumbers[i]);
             this.winningBalls.push(winningBall);
             winningBall.createBall();
-            winningBall.rollTo(770 - (i * 60), i);
+            winningBall.rollTo(770 - (i * 60), i / 3);
         }
     }
 
