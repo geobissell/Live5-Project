@@ -43,8 +43,6 @@ export class winningsScreen{
         if(this.matchingNumbers >= 3){
             this.text.text = "£" + this.winnings;
         }
-
-        this.matchingNumbers = 0;
     }
 
     generateWinningNumbers(){
@@ -55,8 +53,6 @@ export class winningsScreen{
                 this.winningNumbers.push(number);
             }
         }
-
-        this.text.text = this.winningNumbers.toString();
     }
 
     rollOutBalls(callback){
@@ -71,7 +67,6 @@ export class winningsScreen{
                 isMatch = false;
             }
             this.rollBall(winningBall.container, 770 - (i * 60), i / 3, i+1, callback);
-            
         }
     }
 
@@ -97,28 +92,30 @@ export class winningsScreen{
     }
 
     displayWinAnimation(){
-        if(this.matchingNumbers >= 3){
+        if(this.matchingNumbers >= 0){
             const gameCashFall = new cashFall(this.app);
             switch(this.matchingNumbers) {
-                case 3:
+                case 1:
                     this.winnings += 50;
-                    gameCashFall.makeCashFall(10 * this.matchingNumbers);
+                    gameCashFall.makeCashFall(20 * this.matchingNumbers);
                 break;
                 case 4:
                     this.winnings += 100;
-                    gameCashFall.makeCashFall(10 * this.matchingNumbers);
+                    gameCashFall.makeCashFall(20 * this.matchingNumbers);
                 break;
                 case 5:
                     this.winnings += 200;
-                    gameCashFall.makeCashFall(10 * this.matchingNumbers);
+                    gameCashFall.makeCashFall(20 * this.matchingNumbers);
                 break;
                 case 6:
                     this.winnings += 600;
-                    gameCashFall.makeCashFall(20 * this.matchingNumbers);
+                    gameCashFall.makeCashFall(30 * this.matchingNumbers);
                 break;
             }
             this.text.text = "£" + this.winnings;
         }
+
+        this.matchingNumbers = 0;
     }
 
     clearNumbers(){

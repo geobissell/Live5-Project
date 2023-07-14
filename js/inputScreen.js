@@ -20,6 +20,7 @@ export class inputScreen{
         container.addChild(this.text);
         this.text.position.x = 460;
         this.text.position.y = 300;
+        this.text.alpha = 0;
     }
 
     updateNumbers(input){
