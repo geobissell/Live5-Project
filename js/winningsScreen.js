@@ -131,6 +131,5 @@ export class winningsScreen{
 
     clearNumbers(){
         this.winningNumbers = [];
-        this.text.text = "";
     }
 }
