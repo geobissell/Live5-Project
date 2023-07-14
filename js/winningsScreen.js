@@ -11,6 +11,7 @@ export class winningsScreen{
         this.chosenNumbers = [];
         this.winningNumbers = [];
         this.startGameButton;
+        this.forced = false;
         
         this.text = new PIXI.Text("£0", {
             fontFamily: "impact",
@@ -49,11 +50,15 @@ export class winningsScreen{
 
     generateWinningNumbers(){
         this.winningNumbers = [];
-        while(this.winningNumbers.length < 6){
-            let number = Math.floor(Math.random() * 59) + 1;
-            if(!this.winningNumbers.includes(number)){
-                this.winningNumbers.push(number);
+        if(!this.forced){
+            while(this.winningNumbers.length < 6){
+                let number = Math.floor(Math.random() * 59) + 1;
+                if(!this.winningNumbers.includes(number)){
+                    this.winningNumbers.push(number);
+                }
             }
+        }else{
+            this.winningNumbers = [1,2,3,4,5,6];
         }
     }
 
@@ -95,24 +100,24 @@ export class winningsScreen{
     }
 
     displayWinAnimation(){
-        if(this.matchingNumbers >= 0){
+        if(this.matchingNumbers >= 3){
             const gameCashFall = new cashFall(this.app);
             switch(this.matchingNumbers) {
                 case 3:
                     this.winnings += 50;
-                    gameCashFall.makeCashFall(20 * this.matchingNumbers);
+                    gameCashFall.makeCashFall(10 * this.matchingNumbers);
                 break;
                 case 4:
                     this.winnings += 100;
-                    gameCashFall.makeCashFall(20 * this.matchingNumbers);
+                    gameCashFall.makeCashFall(25 * this.matchingNumbers);
                 break;
                 case 5:
                     this.winnings += 200;
-                    gameCashFall.makeCashFall(20 * this.matchingNumbers);
+                    gameCashFall.makeCashFall(35 * this.matchingNumbers);
                 break;
                 case 6:
                     this.winnings += 600;
-                    gameCashFall.makeCashFall(30 * this.matchingNumbers);
+                    gameCashFall.makeCashFall(50 * this.matchingNumbers);
                 break;
             }
             this.text.text = "£" + this.winnings;

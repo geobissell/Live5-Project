@@ -16,7 +16,9 @@ export class cash {
                 },
                 {
                     y: 850, rotation: Math.floor(Math.random() * 7) + -7,
-                    duration: Math.floor(Math.random() * 4) + 2, onComplete: resolve 
+                    duration: Math.floor(Math.random() * 4) + 2,
+                    delay: Math.floor(Math.random() * 0.1) + 0.001,
+                    onComplete: resolve 
                 });
             }
         );
