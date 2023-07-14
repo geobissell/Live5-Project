@@ -13,10 +13,12 @@ export class winningsScreen{
         this.startGameButton;
         
         this.text = new PIXI.Text("£0", {
-            fontFamily: "Arial",
-            fontSize: 24,
-            fill: 0xff1010,
+            fontFamily: "impact",
+            fontSize: 54,
+            fill: 0xf5f242,
             align: "center",
+            stroke: 0x000000,
+            strokeThickness: 6,
         });
     }
 
@@ -26,8 +28,8 @@ export class winningsScreen{
         this.app.stage.addChild(container);
 
         container.addChild(this.text);
-        this.text.position.x = 460;
-        this.text.position.y = 100;
+        this.text.position.x = 580;
+        this.text.position.y = 250;
     }
 
     displayWinnings(chosenNumbers){
@@ -66,7 +68,7 @@ export class winningsScreen{
             }else{
                 isMatch = false;
             }
-            this.rollBall(winningBall.container, 770 - (i * 60), i / 3, i+1, callback);
+            this.rollBall(winningBall.container, 770 - (i * 60), i / 6, i+1, callback);
         }
         this.tintWinningBalls();
     }
@@ -80,7 +82,7 @@ export class winningsScreen{
 
     rollBall(ball, x, delay, ballNumber, callback){
         let rollPromise = new Promise((resolve, reject) => {
-            gsap.fromTo(ball, {x: -50, rotation: 0}, {x: x, rotation: 12.55, duration: 0.7, delay: delay, onComplete: resolve});
+            gsap.fromTo(ball, {x: -50, rotation: 0}, {x: x, rotation: 12.55, duration: 0.5, delay: delay, onComplete: resolve});
         }
         );
         rollPromise.then(() => {
