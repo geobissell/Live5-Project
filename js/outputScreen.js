@@ -26,9 +26,4 @@ export class outputScreen{
         //Hide numbers as may not be needed
         this.text.alpha = 0;
     }
-
-    clearNumbers(){
-        this.winningNumbers = [];
-        this.text.text = "";
-    }
 }

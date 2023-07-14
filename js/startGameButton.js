@@ -29,7 +29,19 @@ export class startGameButton {
         if(this.inputScreen.chosenNumbers.length >= 6){
             this.winningScreen.removeBalls();
             this.winningScreen.generateWinningNumbers();
-            this.winningScreen.displayWinnings(this.winningScreen.winningNumbers, this.inputScreen.chosenNumbers);
+            this.winningScreen.displayWinnings(this.inputScreen.chosenNumbers);
+            this.winningScreen.rollOutBalls(this.activate.bind(this));
+            this.deactivate();
         }
+    }
+
+    activate(){
+        this.sprite.buttonMode = true;
+        this.sprite.interactive = true;
+    }
+
+    deactivate(){
+        this.sprite.buttonMode = false;
+        this.sprite.interactive = false;
     }
   }

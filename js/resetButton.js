@@ -1,7 +1,8 @@
 export class resetButton {
-    constructor(app, inputScreen, outputScreen, keypad) {
+    constructor(app, inputScreen, winningsScreen, outputScreen, keypad) {
         this.app = app;
         this.inputScreen = inputScreen;
+        this.winningsScreen = winningsScreen;
         this.outputScreen = outputScreen;
         this.keypad = keypad;
         this.sprite = null;
@@ -27,7 +28,7 @@ export class resetButton {
 
     pointerDown(){
         this.inputScreen.clearNumbers();
-        this.outputScreen.removeBalls();
+        this.winningsScreen.removeBalls();
         this.outputScreen.clearNumbers();
         this.unselectAllKeys();
     }

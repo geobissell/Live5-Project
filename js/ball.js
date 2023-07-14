@@ -29,15 +29,4 @@ export class ball{
         this.container.pivot.x = 25;
         this.container.pivot.y = 25;
     }
-
-    rollTo(x, delay){
-        let rollPromise = new Promise((resolve, reject) => {
-            gsap.fromTo(this.container, {x: -50, rotation: 0}, {x: x, rotation: 12.55, duration: 0.7, delay: delay, onComplete: resolve});
-        }
-        );
-
-        rollPromise.then(() => {
-
-        });
-    }
 }
