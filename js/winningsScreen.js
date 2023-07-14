@@ -68,6 +68,7 @@ export class winningsScreen{
             }
             this.rollBall(winningBall.container, 770 - (i * 60), i / 3, i+1, callback);
         }
+        this.tintWinningBalls();
     }
 
     removeBalls(){
@@ -95,7 +96,7 @@ export class winningsScreen{
         if(this.matchingNumbers >= 0){
             const gameCashFall = new cashFall(this.app);
             switch(this.matchingNumbers) {
-                case 1:
+                case 3:
                     this.winnings += 50;
                     gameCashFall.makeCashFall(20 * this.matchingNumbers);
                 break;
@@ -116,6 +117,14 @@ export class winningsScreen{
         }
 
         this.matchingNumbers = 0;
+    }
+
+    tintWinningBalls(){
+        for(let i = 0; i < this.winningBalls.length; i++){
+            if(this.chosenNumbers.includes(this.winningBalls[i].number)){
+                this.winningBalls[i].markAsWin();
+            }
+        }
     }
 
     clearNumbers(){
