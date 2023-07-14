@@ -19,7 +19,7 @@ export class winningsScreen{
             fill: 0xf5f242,
             align: "center",
             stroke: 0x000000,
-            strokeThickness: 6,
+            strokeThickness: 7,
         });
     }
 
