@@ -37,7 +37,7 @@ export class ball{
         );
 
         rollPromise.then(() => {
-            //this.app.stage.removeChild(this.container);
+
         });
     }
 }

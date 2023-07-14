@@ -27,9 +27,9 @@ export class startGameButton {
 
     pointerDown(){
         if(this.inputScreen.chosenNumbers.length >= 6){
-            this.outputScreen.removeBalls();
-            this.outputScreen.generateWinningNumbers();
-            this.winningScreen.displayWinnings(this.outputScreen.winningNumbers, this.inputScreen.chosenNumbers);
+            this.winningScreen.removeBalls();
+            this.winningScreen.generateWinningNumbers();
+            this.winningScreen.displayWinnings(this.winningScreen.winningNumbers, this.inputScreen.chosenNumbers);
         }
     }
   }

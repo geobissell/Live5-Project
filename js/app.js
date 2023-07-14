@@ -34,7 +34,7 @@ playerKeypad.generateKeypad();
 const playerLuckyDipButton = new luckyDipButton(app, playerKeypad.inputScreen, playerKeypad);
 playerLuckyDipButton.createButtonSprite();
 
-const gameWinningsScreen = new winningsScreen(app);
+const gameWinningsScreen = new winningsScreen(app, playerKeypad);
 gameWinningsScreen.generateScreen();
 
 const playerOutputScreen = new outputScreen(app, gameWinningsScreen);
