@@ -38,10 +38,12 @@ export class startGameButton {
     activate(){
         this.sprite.buttonMode = true;
         this.sprite.interactive = true;
+        this.sprite.alpha = 1;
     }
 
     deactivate(){
         this.sprite.buttonMode = false;
         this.sprite.interactive = false;
+        this.sprite.alpha = 0.5;
     }
   }
