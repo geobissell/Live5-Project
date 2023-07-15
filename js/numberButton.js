@@ -22,8 +22,7 @@ export class NumberButton {
     }
 
     pointerDown(){
-        //HARD CODED 6 - REMOVE LATER
-        if(this.inputScreen.chosenNumbers.length < 6 && this.selected === false){
+        if(this.inputScreen.chosenNumbers.length < this.inputScreen.maxNumbers && this.selected === false){
             this.markAsSelected();
             this.inputScreen.updateNumbers(this.number);
         }
