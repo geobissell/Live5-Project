@@ -127,10 +127,10 @@ export class WinningsScreen{
                 break;
             }
             this.text.text = "£" + this.winnings;
-        }
 
-        const winAnimation = new WinAnimation(this.app);
-        winAnimation.createWinAnimation(this.matchingNumbers, thisWinAmount);        
+            const winAnimation = new WinAnimation(this.app);
+            winAnimation.createWinAnimation(this.matchingNumbers, thisWinAmount); 
+        }
 
         this.matchingNumbers = 0;
     }
