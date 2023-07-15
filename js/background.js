@@ -12,7 +12,7 @@ export class Background {
 
         this.sprite.position.x = 0;
         this.sprite.position.y = 0;
-        this.sprite.scale.x = 2.2;
-        this.sprite.scale.y = 2.2;
+        this.sprite.scale.x = 2.1;
+        this.sprite.scale.y = 2.15;
     }
   }
