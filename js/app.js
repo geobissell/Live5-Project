@@ -3,7 +3,6 @@ import {InputScreen} from "./inputScreen.js";
 import {ResetButton} from "./resetButton.js";
 import {LuckyDipButton} from "./luckyDipButton.js";
 import {StartGameButton} from "./startGameButton.js";
-import {OutputScreen} from "./outputScreen.js";
 import {Background} from "./background.js";
 import {WinningsScreen} from "./winningsScreen.js";
 
@@ -35,10 +34,7 @@ luckyDipButton.createButtonSprite();
 const winningsScreen = new WinningsScreen(app, keypad);
 winningsScreen.generateScreen();
 
-const outputScreen = new OutputScreen(app, winningsScreen);
-outputScreen.generateScreen();
-
-const startGameButton = new StartGameButton(app, outputScreen, keypad.inputScreen, winningsScreen);
+const startGameButton = new StartGameButton(app, keypad.inputScreen, winningsScreen);
 startGameButton.createButtonSprite();
 
 const resetButton = new ResetButton(app, keypad.inputScreen, winningsScreen, keypad);

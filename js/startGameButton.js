@@ -1,7 +1,6 @@
 export class StartGameButton {
-    constructor(app, outputScreen, inputScreen, winningScreen) {
+    constructor(app, inputScreen, winningScreen) {
         this.app = app;
-        this.outputScreen = outputScreen;
         this.inputScreen = inputScreen;
         this.winningScreen = winningScreen;
         this.sprite = null;
