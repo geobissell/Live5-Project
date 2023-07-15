@@ -37,5 +37,5 @@ winningsScreen.generateScreen();
 const startGameButton = new StartGameButton(app, keypad.inputScreen, winningsScreen);
 startGameButton.createButtonSprite();
 
-const resetButton = new ResetButton(app, keypad.inputScreen, winningsScreen, keypad);
+const resetButton = new ResetButton(app, winningsScreen, keypad);
 resetButton.createButtonSprite();
