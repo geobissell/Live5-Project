@@ -19,8 +19,10 @@ export class WinAnimation{
         this.app.stage.addChild(this.container);
         this.container.addChild(this.text);
         this.text.text = matches + " MATCHES\n" + "£" + amount;
-        this.text.position.x = 184;
-        this.text.position.y = 100;
+        this.text.position.x = 407;
+        this.text.position.y = 350;
+        this.text.pivot.x = 250;
+        this.text.pivot.y = 250;
 
         let winPromise = new Promise((resolve, reject) => {
             TweenMax.to(this.text.scale, 1, {x:1.2, y:1.2, yoyo: true, repeat: 3, onComplete: resolve});
