@@ -1,6 +1,6 @@
-import {numberButton} from "./numberButton.js";
+import {NumberButton} from "./numberButton.js";
 
-export class keypad{
+export class Keypad{
     constructor(app, buttonSize, keypadSize, numberOfKeys, inputScreen){
         this.app = app;
         this.buttonSize = buttonSize;
@@ -19,7 +19,7 @@ export class keypad{
         let rowCount = 0;
 
         for(let i = 0; i < this.numberOfKeys; i++){
-            let button = new numberButton(this.app, i + 1, this.inputScreen);
+            let button = new NumberButton(this.app, i + 1, this.inputScreen);
 
             button.createButtonSprite(i + 1);
             this.numberButtons.push(button);

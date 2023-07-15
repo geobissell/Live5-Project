@@ -1,4 +1,4 @@
-export class cash {
+export class Cash {
     constructor(app) {
         this.app = app;
         this.sprite = null;

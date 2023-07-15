@@ -1,4 +1,4 @@
-export class ball{
+export class Ball{
     constructor(app, number){
         this.app = app;
         this.number = number;

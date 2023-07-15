@@ -1,4 +1,4 @@
-export class background {
+export class Background {
     constructor(app) {
         this.app = app;
         this.sprite = null;

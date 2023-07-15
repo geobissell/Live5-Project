@@ -1,4 +1,4 @@
-export class outputScreen{
+export class OutputScreen{
     constructor(app, keypadSize, winningsScreen){
         this.app = app;
         this.keypadSize = keypadSize;

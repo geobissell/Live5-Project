@@ -1,8 +1,8 @@
-export class luckyDipButton {
-    constructor(app, inputScreen, keypad) {
+export class LuckyDipButton {
+    constructor(app, keypad) {
         this.app = app;
-        this.inputScreen = inputScreen;
         this.keypad = keypad;
+        this.inputScreen = keypad.inputScreen;
         this.sprite = null;
     }
   

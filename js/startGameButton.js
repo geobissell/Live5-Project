@@ -1,4 +1,4 @@
-export class startGameButton {
+export class StartGameButton {
     constructor(app, outputScreen, inputScreen, winningScreen) {
         this.app = app;
         this.outputScreen = outputScreen;

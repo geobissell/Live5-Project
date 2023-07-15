@@ -1,7 +1,7 @@
-import {cashFall} from "./cashFall.js";
-import {ball} from "./ball.js";
+import {CashFall} from "./cashFall.js";
+import {Ball} from "./ball.js";
 
-export class winningsScreen{
+export class WinningsScreen{
     constructor(app, keypad){
         this.app = app;
         this.keypad = keypad;
@@ -64,7 +64,7 @@ export class winningsScreen{
 
     rollOutBalls(callback){
         for(let i = 0; i < this.winningNumbers.length; i++){
-            let winningBall = new ball(this.app, this.winningNumbers[i]);
+            let winningBall = new Ball(this.app, this.winningNumbers[i]);
             this.winningBalls.push(winningBall);
             winningBall.createBall();
             let isMatch = false;
@@ -101,7 +101,7 @@ export class winningsScreen{
 
     displayWinAnimation(){
         if(this.matchingNumbers >= 3){
-            const gameCashFall = new cashFall(this.app);
+            const gameCashFall = new CashFall(this.app);
             switch(this.matchingNumbers) {
                 case 3:
                     this.winnings += 50;

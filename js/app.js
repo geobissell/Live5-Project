@@ -1,12 +1,12 @@
-import {keypad} from "./keypad.js";
-import {inputScreen} from "./inputScreen.js";
-import {resetButton} from "./resetButton.js";
-import {luckyDipButton} from "./luckyDipButton.js";
-import {startGameButton} from "./startGameButton.js";
-import {outputScreen} from "./outputScreen.js";
-import {background} from "./background.js";
+import {Keypad} from "./keypad.js";
+import {InputScreen} from "./inputScreen.js";
+import {ResetButton} from "./resetButton.js";
+import {LuckyDipButton} from "./luckyDipButton.js";
+import {StartGameButton} from "./startGameButton.js";
+import {OutputScreen} from "./outputScreen.js";
+import {Background} from "./background.js";
 // import {ball} from "./ball.js";
-import {winningsScreen} from "./winningsScreen.js";
+import {WinningsScreen} from "./winningsScreen.js";
 // import {cashFall} from "./cashFall.js";
 
 const app = new PIXI.Application(
@@ -22,29 +22,29 @@ globalThis.__PIXI_APP__ = app;
 
 document.body.appendChild(app.view);
 
-const gameBackground = new background(app);
-gameBackground.createBackgroundSprite();
+const background = new Background(app);
+background.createBackgroundSprite();
 
-const playerInputScreen = new inputScreen(app, 59);
-playerInputScreen.generateScreen();
+const inputScreen = new InputScreen(app, 59);
+inputScreen.generateScreen();
 
-const playerKeypad = new keypad(app, 70, 0.7, 59, playerInputScreen);
-playerKeypad.generateKeypad();
+const keypad = new Keypad(app, 70, 0.7, 59, inputScreen);
+keypad.generateKeypad();
 
-const playerLuckyDipButton = new luckyDipButton(app, playerKeypad.inputScreen, playerKeypad);
-playerLuckyDipButton.createButtonSprite();
+const luckyDipButton = new LuckyDipButton(app, keypad);
+luckyDipButton.createButtonSprite();
 
-const gameWinningsScreen = new winningsScreen(app, playerKeypad);
-gameWinningsScreen.generateScreen();
+const winningsScreen = new WinningsScreen(app, keypad);
+winningsScreen.generateScreen();
 
-const playerOutputScreen = new outputScreen(app, gameWinningsScreen);
-playerOutputScreen.generateScreen();
+const outputScreen = new OutputScreen(app, winningsScreen);
+outputScreen.generateScreen();
 
-const playerStartGameButton = new startGameButton(app, playerOutputScreen, playerKeypad.inputScreen, gameWinningsScreen);
-playerStartGameButton.createButtonSprite();
+const startGameButton = new StartGameButton(app, outputScreen, keypad.inputScreen, winningsScreen);
+startGameButton.createButtonSprite();
 
-const playerResetButton = new resetButton(app, playerKeypad.inputScreen, gameWinningsScreen, playerKeypad);
-playerResetButton.createButtonSprite();
+const resetButton = new ResetButton(app, keypad.inputScreen, winningsScreen, keypad);
+resetButton.createButtonSprite();
 
 // const gameCashFall = new cashFall(app);
 // gameCashFall.makeCashFall(30);

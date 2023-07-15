@@ -1,4 +1,4 @@
-export class numberButton {
+export class NumberButton {
     constructor(app, number, inputScreen) {
         this.app = app;
         this.number = number;

@@ -1,4 +1,4 @@
-export class resetButton {
+export class ResetButton {
     constructor(app, inputScreen, winningsScreen, keypad) {
         this.app = app;
         this.inputScreen = inputScreen;
