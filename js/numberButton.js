@@ -4,7 +4,7 @@ export class NumberButton {
         this.number = number;
         this.inputScreen = inputScreen;
         this.sprite = null;
-        this.selectedColour = 0xf5f242;
+        this.selectedColour = 0xfc9803;
         this.selected = false;
     }
   
