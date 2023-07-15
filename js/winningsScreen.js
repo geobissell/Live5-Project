@@ -12,7 +12,7 @@ export class WinningsScreen{
         this.chosenNumbers = [];
         this.winningNumbers = [];
         this.startGameButton;
-        this.forced = true;
+        this.forced = false;
         
         this.text = new PIXI.Text("£0", {
             fontFamily: "impact",
