@@ -4,8 +4,7 @@ export class NumberButton {
         this.number = number;
         this.inputScreen = inputScreen;
         this.sprite = null;
-        this.selectedColour = 0x004cff;
-        this.winningColour = 0x001aff;
+        this.selectedColour = 0xf5f242;
         this.selected = false;
     }
   
@@ -42,17 +41,5 @@ export class NumberButton {
     markAsUnselected(){
         this.sprite.tint = 0xFFFFFF;
         this.selected = false;
-    }
-
-    markAsWin(){
-        this.sprite.tint = this.winningColour;
-    }
-
-    unmarkAsWin(){
-        if(this.sprite.selected){
-            this.sprite.tint = selectedColour;
-        }else{
-            this.sprite.tint = 0xFFFFFF;
-        }
     }
   }
