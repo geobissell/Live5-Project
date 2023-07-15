@@ -11,7 +11,6 @@ export class WinningsScreen{
         this.winningBalls = [];
         this.chosenNumbers = [];
         this.winningNumbers = [];
-        this.startGameButton;
         this.forced = false;
         
         this.text = new PIXI.Text("£0", {
