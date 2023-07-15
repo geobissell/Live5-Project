@@ -31,7 +31,7 @@ export class Ball{
         this.container.addChild(this.text);
         
         this.text.position.x = 32;
-        this.text.position.y = 20;
+        this.text.position.y = 27;
 
         this.container.position.x = 500;
         this.container.position.y = 180;
