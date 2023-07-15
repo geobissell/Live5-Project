@@ -1,5 +1,6 @@
 import {CashFall} from "./cashFall.js";
 import {Ball} from "./ball.js";
+import {WinAnimation} from "./winAnimation.js";
 
 export class WinningsScreen{
     constructor(app, keypad){
@@ -11,7 +12,7 @@ export class WinningsScreen{
         this.chosenNumbers = [];
         this.winningNumbers = [];
         this.startGameButton;
-        this.forced = false;
+        this.forced = true;
         
         this.text = new PIXI.Text("£0", {
             fontFamily: "impact",
@@ -93,35 +94,43 @@ export class WinningsScreen{
         rollPromise.then(() => {
             if(ballNumber === 6){
                 console.log("FINISHED");
-                this.displayWinAnimation();
+                this.displayWinAnimations();
                 callback();
             }
         });
     }
 
-    displayWinAnimation(){
+    displayWinAnimations(){
+        let thisWinAmount = 0;
         if(this.matchingNumbers >= 3){
             const gameCashFall = new CashFall(this.app);
             switch(this.matchingNumbers) {
                 case 3:
                     this.winnings += 50;
+                    thisWinAmount = 50;
                     gameCashFall.makeCashFall(10 * this.matchingNumbers);
                 break;
                 case 4:
                     this.winnings += 100;
+                    thisWinAmount = 100;
                     gameCashFall.makeCashFall(25 * this.matchingNumbers);
                 break;
                 case 5:
                     this.winnings += 200;
+                    thisWinAmount = 200;
                     gameCashFall.makeCashFall(35 * this.matchingNumbers);
                 break;
                 case 6:
                     this.winnings += 600;
+                    thisWinAmount = 600;
                     gameCashFall.makeCashFall(50 * this.matchingNumbers);
                 break;
             }
             this.text.text = "£" + this.winnings;
         }
+
+        const winAnimation = new WinAnimation(this.app);
+        winAnimation.createWinAnimation(this.matchingNumbers, thisWinAmount);        
 
         this.matchingNumbers = 0;
     }
