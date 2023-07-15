@@ -91,7 +91,7 @@ export class WinningsScreen{
         }
         );
         rollPromise.then(() => {
-            if(ballNumber === 6){
+            if(ballNumber >= 6){
                 this.displayWinAnimations();
                 callback();
             }

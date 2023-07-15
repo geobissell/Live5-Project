@@ -25,7 +25,7 @@ export class WinAnimation{
         this.text.pivot.y = 250;
 
         let winPromise = new Promise((resolve, reject) => {
-            TweenMax.to(this.text.scale, 1, {x:1.2, y:1.2, yoyo: true, repeat: 3, onComplete: resolve});
+            TweenMax.to(this.text.scale, 1, {x:1.2, y:1.2, yoyo: true, repeat: 2, onComplete: resolve});
             }
         );
 
