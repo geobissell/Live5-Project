@@ -30,10 +30,5 @@ export class LuckyDipButton {
 
     pointerDown(){
         this.inputScreen.createLuckyDip(this.keypad.numberButtons);
-        // this.markNumbersAsSelected();
     }
-
-    // markNumbersAsSelected(){
-        
-    // }
   }
