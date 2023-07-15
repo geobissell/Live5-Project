@@ -1,7 +1,7 @@
 export class StartGameButton {
-    constructor(app, inputScreen, winningScreen) {
+    constructor(app, keypad, winningScreen) {
         this.app = app;
-        this.inputScreen = inputScreen;
+        this.keypad = keypad;
         this.winningScreen = winningScreen;
         this.sprite = null;
     }
@@ -25,10 +25,10 @@ export class StartGameButton {
     }
 
     pointerDown(){
-        if(this.inputScreen.chosenNumbers.length >= 6){
+        if(this.keypad.inputScreen.chosenNumbers.length >= 6){
             this.winningScreen.removeBalls();
             this.winningScreen.generateWinningNumbers();
-            this.winningScreen.displayWinnings(this.inputScreen.chosenNumbers);
+            this.winningScreen.displayWinnings(this.keypad.inputScreen.chosenNumbers);
             this.winningScreen.rollOutBalls(this.activate.bind(this));
             this.deactivate();
         }

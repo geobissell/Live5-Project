@@ -34,7 +34,7 @@ luckyDipButton.createButtonSprite();
 const winningsScreen = new WinningsScreen(app, keypad);
 winningsScreen.generateScreen();
 
-const startGameButton = new StartGameButton(app, keypad.inputScreen, winningsScreen);
+const startGameButton = new StartGameButton(app, keypad, winningsScreen);
 startGameButton.createButtonSprite();
 
 const resetButton = new ResetButton(app, winningsScreen, keypad);
