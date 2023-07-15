@@ -11,7 +11,7 @@ const app = new PIXI.Application(
         width: 1280,
         height: 720,
         backgroundColor: 0xC2DFFF,
-        antialias: true
+        antialias: false
     }
 );
 
