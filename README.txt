@@ -5,4 +5,4 @@ You can force a win by setting "forced" to true in the WinningsScreen class. Thi
 
 Thank you again for your time and I hope to speak to you soon.
 
-- George Bissell
+- George
