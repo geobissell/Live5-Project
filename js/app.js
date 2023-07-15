@@ -5,9 +5,7 @@ import {LuckyDipButton} from "./luckyDipButton.js";
 import {StartGameButton} from "./startGameButton.js";
 import {OutputScreen} from "./outputScreen.js";
 import {Background} from "./background.js";
-// import {ball} from "./ball.js";
 import {WinningsScreen} from "./winningsScreen.js";
-// import {cashFall} from "./cashFall.js";
 
 const app = new PIXI.Application(
     {
@@ -45,9 +43,3 @@ startGameButton.createButtonSprite();
 
 const resetButton = new ResetButton(app, keypad.inputScreen, winningsScreen, keypad);
 resetButton.createButtonSprite();
-
-// const gameCashFall = new cashFall(app);
-// gameCashFall.makeCashFall(30);
-
-// const gameBall = new ball(app, 23);
-// gameBall.createBall();
